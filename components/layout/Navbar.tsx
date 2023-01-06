@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Navbar() {
   return (
-    <nav className=" flex items-center justify-between">
+    <nav className=" flex items-center justify-between bg-[#0C1712] px-[6.25rem]">
       <div>
         <Image
           src="/assets/icons/logo.svg"

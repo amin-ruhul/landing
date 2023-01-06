@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function HeroSection() {
   return (
-    <section className="flex items-center py-[5rem] justify-between">
+    <section className="flex items-center py-[5rem] justify-between bg-[#0C1712] px-[6.25rem]">
       <div className="text-[#ffffff]">
         <h1 className="text-[4.375rem] landing-[5.125rem] ">
           Authentic Home <br /> food in UK
