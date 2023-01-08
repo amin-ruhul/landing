@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Contact from "../components/contact";
 import HeroSection from "../components/hero";
 import Footer from "../components/layout/Footer";
 import ShowCase from "../components/showcase";
@@ -95,6 +96,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="p-[6.25rem]">
+        <Contact />
       </div>
     </div>
   );
