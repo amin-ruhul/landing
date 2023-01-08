@@ -3,12 +3,12 @@ import Image from "next/image";
 function Footer() {
   return (
     <section className="bg-[#1AC073]">
-      <div className="text-[#ffffff] px-[6.25rem]">
-        <footer className=" flex items-center justify-between   py-[2.188rem]">
+      <div className="text-[#ffffff] px-[2.25rem] lg:px-[6.25rem]">
+        <footer className=" flex items-center flex-col lg:flex-row justify-between   py-[2.188rem] space-y-4 lg:space-y-0">
           <div className="text-[1.5rem] font-semibold landing-[1.25rem]">
             WHAT2EAT
           </div>
-          <ul className="text-white text-[1.125rem] flex items-center space-x-[2.5rem]">
+          <ul className="text-white text-[1.125rem] flex items-center space-x-[1.5rem] lg:space-x-[2.5rem]">
             <li>Home</li>
             <li>About</li>
             <li>Menu</li>

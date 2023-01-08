@@ -3,13 +3,8 @@ import Image from "next/image";
 function FoodCard() {
   return (
     <div className="shadow rounded-[10px] text-[12px]">
-      <div className="">
-        <Image
-          src="/assets/images/pizza.svg"
-          alt="pizza"
-          width={277}
-          height={250}
-        />
+      <div className="w-full h-[16.875rem] md:h-[15.5rem] lg:h-[22.875rem] relative">
+        <Image src="/assets/images/pizza.svg" alt="pizza" fill />
       </div>
       <div className="flex items-center justify-between my-[1rem] px-[12.5px]">
         <p>Home made pizza</p>

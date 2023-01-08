@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Navbar() {
   return (
-    <nav className=" flex items-center justify-between bg-[#0C1712] px-[6.25rem]">
+    <nav className="flex flex-col md:flex-row items-center justify-between bg-[#0C1712] x-[2.25rem] md:px-[6.25rem] space-y-4 pb-4 md:space-y-0 md-pb-0">
       <div>
         <Image
           src="/assets/icons/logo.svg"
@@ -11,7 +11,7 @@ function Navbar() {
           height={56}
         />
       </div>
-      <ul className="text-white text-[1.125rem] flex items-center space-x-[2.5rem]">
+      <ul className="text-white text-[1.125rem] flex items-center space-x-[1.5rem] lg:space-x-[2.5rem]">
         <li>Home</li>
         <li>About</li>
         <li>Menu</li>

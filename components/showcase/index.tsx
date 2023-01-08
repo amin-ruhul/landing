@@ -4,38 +4,41 @@ import FoodCard from "../card/FoodCard";
 
 function ShowCase() {
   return (
-    <div className="mt-[6.563rem]">
+    <div className="mt-[6.563rem] w-full">
       <h2 className="text-[1.5rem]">Home Kitchen</h2>
       <div className="py-[1rem]">
-        <div className="" role="group">
+        <div
+          className="flex flex-col space-y-2 md:block md:space-y-0"
+          role="group"
+        >
           <button
             type="button"
-            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] border-r-0 rounded-l-[10px] bg-[#F3BA00]"
+            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] md:border-r-0 rounded-[10px] md:rounded-[0px] md:rounded-l-[10px] bg-[#F3BA00]"
           >
             All
           </button>
           <button
             type="button"
-            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] border-r-0"
+            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] md:border-r-0 rounded-[10px] md:rounded-[0px]"
           >
             Button
           </button>
           <button
             type="button"
-            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] border-r-0"
+            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] md:border-r-0 rounded-[10px] md:rounded-[0px]"
           >
             Free delivery
           </button>
           <button
             type="button"
-            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] border-r-0"
+            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] md:border-r-0 rounded-[10px] md:rounded-[0px]"
           >
             New
           </button>
 
           <button
             type="button"
-            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] rounded-r-[10px]"
+            className="border border-[#F3BA00] py-[0.813rem] px-[2.5rem] md:rounded-r-[10px] rounded-[10px] md:rounded-[0px]"
           >
             Coming
           </button>
@@ -53,7 +56,7 @@ function ShowCase() {
         <option value="1">1</option>
       </select>
 
-      <div className="grid sm:grid-cols-2 sm:gap-[0.5rem] md:grid-cols-3 md:gap-[0.8rem]  lg:grid-cols-5 lg:gap-[1.1rem] xl:grid-cols-6 xl:gap-[1.8rem] mb-[6.25rem]">
+      <div className="grid sm:grid-cols-2 sm:gap-[0.5rem] md:grid-cols-3 md:gap-[0.8rem]  lg:grid-cols-4 lg:gap-[1.1rem] xl:grid-cols-4 xl:gap-[1.8rem] mb-[6.25rem] space-y-3 md:space-y-0">
         <FoodCard />
         <FoodCard />
       </div>
