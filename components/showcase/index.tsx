@@ -9,7 +9,7 @@ function ShowCase({ foodData }) {
 
   const { data, error } = useSWR("/products", getProduct);
 
-  if (data?.data && foodData.length !== data.data.length) {
+  if (data?.data && foodData?.length !== data?.data?.length) {
     setLocalData(data?.data);
   }
 
