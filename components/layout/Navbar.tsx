@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -12,7 +13,9 @@ function Navbar() {
         />
       </div>
       <ul className="text-white text-[1.125rem] flex items-center space-x-[1.5rem] lg:space-x-[2.5rem]">
-        <li>Home</li>
+        <li>
+          <Link href={"/"}>Home</Link>{" "}
+        </li>
         <li>About</li>
         <li>Menu</li>
         <li>Blog</li>
@@ -25,8 +28,16 @@ function Navbar() {
           width={22}
           height={22}
         />
-
-        <Image src="/assets/icons/cart.svg" alt="logo" width={22} height={22} />
+        <Link href="/checkout">
+          <div>
+            <Image
+              src="/assets/icons/cart.svg"
+              alt="logo"
+              width={22}
+              height={22}
+            />
+          </div>
+        </Link>
       </div>
     </nav>
   );

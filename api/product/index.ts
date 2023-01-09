@@ -1,5 +1,5 @@
 import apiClient from "../../services/axios";
-import  {AxiosResponse} from 'axios';
+
 
 
 export const getProduct = async (url = '/products')=>{

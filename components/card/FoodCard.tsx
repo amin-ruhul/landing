@@ -1,7 +1,19 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setCartProduct } from "../../store/feature/cartSlice";
 
 function FoodCard({ foodData }) {
+  const dispatch = useDispatch();
+
+  const addToCart = (data) => {
+    console.log(data);
+    let cartData = {
+      ...data,
+      quantity: 1,
+    };
+    dispatch(setCartProduct(cartData));
+  };
+
   if (!foodData)
     return <h1 className="text-2xl text-bold">No Data available</h1>;
 
@@ -31,7 +43,10 @@ function FoodCard({ foodData }) {
           </div>
         </div>
         <div>
-          <button className="bg-[#F3BA00] p-[.2rem]">
+          <button
+            className="bg-[#F3BA00] p-[.2rem]"
+            onClick={() => addToCart(foodData)}
+          >
             <Image
               src="/assets/icons/btn-icon.svg"
               alt="btn-icon"
