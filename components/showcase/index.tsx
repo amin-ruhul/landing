@@ -1,8 +1,18 @@
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import FoodCard from "../card/FoodCard";
+import useSWR from "swr";
+import { getProduct } from "../../api/product";
 
-function ShowCase() {
+function ShowCase({ foodData }) {
+  const [localData, setLocalData] = useState(() => foodData || []);
+
+  const { data, error } = useSWR("/products", getProduct);
+
+  if (data?.data && foodData.length !== data.data.length) {
+    setLocalData(data?.data);
+  }
+
   return (
     <div className="mt-[6.563rem] w-full">
       <h2 className="text-[1.5rem]">Home Kitchen</h2>
@@ -57,8 +67,8 @@ function ShowCase() {
       </select>
 
       <div className="grid sm:grid-cols-2 sm:gap-[0.5rem] md:grid-cols-3 md:gap-[0.8rem]  lg:grid-cols-4 lg:gap-[1.1rem] xl:grid-cols-4 xl:gap-[1.8rem] mb-[6.25rem] space-y-3 md:space-y-0">
-        <FoodCard />
-        <FoodCard />
+        {localData &&
+          localData.map((data) => <FoodCard foodData={data} key={data.id} />)}
       </div>
 
       <div className="w-full pb-[6.25rem] flex items-center justify-center">

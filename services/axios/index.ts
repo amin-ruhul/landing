@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: "https://munchies-api.up.railway.app",
-  timeout: 1000,
+  timeout: 5000,
 });
 
 // Add a request interceptor

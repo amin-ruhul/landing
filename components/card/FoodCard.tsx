@@ -1,14 +1,18 @@
 import Image from "next/image";
+import { useState } from "react";
 
-function FoodCard() {
+function FoodCard({ foodData }) {
+  if (!foodData)
+    return <h1 className="text-2xl text-bold">No Data available</h1>;
+
   return (
     <div className="shadow rounded-[10px] text-[12px]">
       <div className="w-full h-[16.875rem] md:h-[15.5rem] lg:h-[22.875rem] relative">
-        <Image src="/assets/images/pizza.svg" alt="pizza" fill />
+        <Image src={foodData?.image} alt="pizza" fill />
       </div>
       <div className="flex items-center justify-between my-[1rem] px-[12.5px]">
-        <p>Home made pizza</p>
-        <p>$19</p>
+        <p>{foodData?.name}</p>
+        <p>$ {foodData?.price}</p>
       </div>
 
       <div className="flex items-center justify-between px-[12.5px] pb-[12.5px]">
