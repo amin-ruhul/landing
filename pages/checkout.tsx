@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { setLocalStorageData } from "../store/feature/cartSlice";
 import { placeOrderRequest } from "../api/order";
@@ -16,47 +16,44 @@ function checkout() {
     calculateTotal();
   }, [cartData]);
 
-  useEffect(()=>{
-    dispatch(setLocalStorageData(JSON.parse(localStorage.getItem('cartData'))))
-  },[])
-
+  useEffect(() => {
+    dispatch(setLocalStorageData(JSON.parse(localStorage.getItem("cartData"))));
+  }, []);
 
   function calculateTotal() {
     let total = cartData.reduce(function (accumulator, currentValue) {
-      return accumulator + currentValue.price*currentValue.quantity;
+      return accumulator + currentValue.price * currentValue.quantity;
     }, 0);
 
     setTotal(total);
   }
 
-
-  const placeOrder = async ()=>{
+  const placeOrder = async () => {
     let data = {
-        customer: {
-            name: "Ruhul",
-            address: "Dhaka",
-            phone: "01823098120"
-        },
+      customer: {
+        name: "Ruhul",
+        address: "Dhaka",
+        phone: "01823098120",
+      },
 
-        calculation: {
-            price: total,
-            vat: 89,
-            total: total+89
-        },
+      calculation: {
+        price: total,
+        vat: 89,
+        total: total + 89,
+      },
 
-        items: cartData
-    }
+      items: cartData,
+    };
 
-    await placeOrderRequest(data)
-
-  }
-
+    await placeOrderRequest(data);
+  };
 
   return (
     <div className="flex  justify-center my-14">
-        
       <div className="shadow-sm border px-[50px] py-[20px]">
-      <h2 className="text-[20px] text-center mb-[20px] text-slate-800 font-semibold">Checkout</h2>
+        <h2 className="text-[20px] text-center mb-[20px] text-slate-800 font-semibold">
+          Checkout
+        </h2>
         {cartData &&
           cartData.map((data) => (
             <div
@@ -81,7 +78,7 @@ function checkout() {
           className="px-10 py-3 p border border-blue-600 bg-blue-600 text-white"
           onClick={placeOrder}
         >
-          Place Order-> {total}
+          Place Order {total}
         </button>
       </div>
     </div>
