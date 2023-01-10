@@ -4,11 +4,11 @@ import Image from "next/image";
 import { setLocalStorageData } from "../store/feature/cartSlice";
 import { placeOrderRequest } from "../api/order";
 
-function checkout() {
+function Checkout() {
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
 
-  const cartData = useSelector((state) => state.cart.cartProduct);
+  const cartData = useSelector((state) => state?.cart?.cartProduct);
 
   console.log(cartData);
 
